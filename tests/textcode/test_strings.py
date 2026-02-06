@@ -180,3 +180,11 @@ class TestStrings(FileBasedTesting):
         test_file = 'strings/with-lf/strings.exe'
         expected_file = 'strings/with-lf/strings.exe.results'
         self.check_file_strings(test_file, expected_file, regen=REGEN_TEST_FIXTURES)
+    
+    class TestStrings(FileBasedTesting):
+  
+        def test_copyright_without_year(self):
+                self.check_file_strings(
+            test_file='copyright_no_year.txt',
+            expected_file='copyright_no_year.expected.json'
+        )
